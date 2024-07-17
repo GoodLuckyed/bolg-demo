@@ -45,7 +45,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         String password = userRegisterRequest.getPassword();
         String checkPassword = userRegisterRequest.getCheckPassword();
         String email = userRegisterRequest.getEmail();
-        if (StringUtils.isAllBlank(username,password)){
+        if (StringUtils.isAnyBlank(username,password)){
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"用户名或密码不能为空");
         }
         if (username.length() > 20){
@@ -94,7 +94,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     public String login(UserLoginRequest userLoginRequest, HttpServletRequest request) {
         String username = userLoginRequest.getUsername();
         String password = userLoginRequest.getPassword();
-        if (StringUtils.isAllBlank(username,password)){
+        if (StringUtils.isAnyBlank(username,password)){
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"用户名或密码不能为空");
         }
         // 密码加密

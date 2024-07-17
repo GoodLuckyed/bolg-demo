@@ -1,5 +1,7 @@
 package com.lucky.blogdemo.interceptor;
 
+import com.lucky.blogdemo.common.ErrorCode;
+import com.lucky.blogdemo.exception.BusinessException;
 import com.lucky.blogdemo.model.entity.User;
 import com.lucky.blogdemo.model.user.UserVo;
 import com.lucky.blogdemo.utils.UserHolder;
@@ -23,12 +25,12 @@ public class LoginInterceptor implements HandlerInterceptor {
         // 获取请求头中的token
         String token = request.getHeader("Authorization");
         if (StringUtils.isBlank(token)){
-            return false;
+            throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR,"未登录");
         }
         // 根据token获取用户信息
         User user = (User) request.getSession().getAttribute(token);
         if (user == null){
-            return false;
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
         }
         UserVo userVo = new UserVo();
         BeanUtils.copyProperties(user,userVo);

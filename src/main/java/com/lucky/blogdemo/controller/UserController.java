@@ -12,10 +12,7 @@ import com.lucky.blogdemo.utils.UserHolder;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author lucky
@@ -51,7 +48,7 @@ public class UserController {
     }
 
     @Operation(summary = "获取当前用户信息")
-    @PostMapping("/me")
+    @GetMapping("/me")
     public BaseResponse<UserVo> getUserInfo(){
         UserVo user = UserHolder.getUser();
         if (user == null){
