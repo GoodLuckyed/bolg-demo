@@ -1,7 +1,10 @@
 package com.lucky.blogdemo.service;
 
-import com.lucky.blogdemo.model.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lucky.blogdemo.model.entity.User;
+import com.lucky.blogdemo.model.user.UserLoginRequest;
+import com.lucky.blogdemo.model.user.UserRegisterRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 
 /**
@@ -11,4 +14,18 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UserService extends IService<User> {
 
+    /**
+     * 用户注册
+     * @param userRegisterRequest
+     * @return
+     */
+    long register(UserRegisterRequest userRegisterRequest);
+
+
+    /**
+     * 用户登录
+     * @param userLoginRequest
+     * @return
+     */
+    String login(UserLoginRequest userLoginRequest, HttpServletRequest request);
 }

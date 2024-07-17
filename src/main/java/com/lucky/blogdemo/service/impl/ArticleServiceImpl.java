@@ -1,9 +1,9 @@
 package com.lucky.blogdemo.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.lucky.blogdemo.mapper.ArticleMapper;
 import com.lucky.blogdemo.model.entity.Article;
 import com.lucky.blogdemo.service.ArticleService;
-import com.lucky.blogdemo.mapper.ArticleMapper;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,8 +12,7 @@ import org.springframework.stereotype.Service;
 * @createDate 2024-07-17 15:54:23
 */
 @Service
-public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
-    implements ArticleService{
+public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article> implements ArticleService{
 
 }
 

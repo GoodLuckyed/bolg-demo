@@ -5,18 +5,18 @@
 <mapper namespace="com.lucky.blogdemo.mapper.ArticleMapper">
 
     <resultMap id="BaseResultMap" type="com.lucky.blogdemo.model.entity.Article">
-            <id property="postId" column="postId" jdbcType="BIGINT"/>
+            <id property="postId" column="post_id" jdbcType="BIGINT"/>
             <result property="title" column="title" jdbcType="VARCHAR"/>
             <result property="content" column="content" jdbcType="VARCHAR"/>
-            <result property="user_id" column="user_id" jdbcType="BIGINT"/>
-            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
-            <result property="last_modified" column="last_modified" jdbcType="TIMESTAMP"/>
-            <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="created" column="created" jdbcType="TIMESTAMP"/>
+            <result property="lastModified" column="last_modified" jdbcType="TIMESTAMP"/>
+            <result property="isdelete" column="isDelete" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        postId,title,content,
-        user_id,createTime,last_modified,
+        post_id,title,content,
+        user_id,created,last_modified,
         isDelete
     </sql>
 </mapper>

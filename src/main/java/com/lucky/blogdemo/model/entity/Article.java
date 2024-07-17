@@ -18,7 +18,7 @@ public class Article implements Serializable {
     /**
      * 文章id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ASSIGN_ID)
     private Long postId;
 
     /**
@@ -34,22 +34,22 @@ public class Article implements Serializable {
     /**
      * 作者id
      */
-    private Long user_id;
+    private Long userId;
 
     /**
      * 创建时间
      */
-    private Date createTime;
+    private Date created;
 
     /**
      * 更新时间
      */
-    private Date last_modified;
+    private Date lastModified;
 
     /**
      * 是否删除
      */
-    private Integer isDelete;
+    private Integer isdelete;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

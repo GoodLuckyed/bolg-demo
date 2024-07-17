@@ -1,7 +1,7 @@
 package com.lucky.blogdemo.service;
 
-import com.lucky.blogdemo.model.entity.Article;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lucky.blogdemo.model.entity.Article;
 
 /**
 * @author lucky

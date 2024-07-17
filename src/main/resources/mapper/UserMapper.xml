@@ -5,18 +5,18 @@
 <mapper namespace="com.lucky.blogdemo.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="com.lucky.blogdemo.model.entity.User">
-            <id property="user_id" column="user_id" jdbcType="BIGINT"/>
+            <id property="userId" column="user_id" jdbcType="BIGINT"/>
             <result property="username" column="username" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="email" column="email" jdbcType="VARCHAR"/>
-            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
-            <result property="last_modified" column="last_modified" jdbcType="TIMESTAMP"/>
-            <result property="isDelete" column="isDelete" jdbcType="TINYINT"/>
+            <result property="created" column="created" jdbcType="TIMESTAMP"/>
+            <result property="lastModified" column="last_modified" jdbcType="TIMESTAMP"/>
+            <result property="isdelete" column="isDelete" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         user_id,username,password,
-        email,createTime,last_modified,
+        email,created,last_modified,
         isDelete
     </sql>
 </mapper>

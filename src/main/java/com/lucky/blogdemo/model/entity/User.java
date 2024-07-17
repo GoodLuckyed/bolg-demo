@@ -19,7 +19,7 @@ public class User implements Serializable {
      * 用户id
      */
     @TableId(type = IdType.ASSIGN_ID)
-    private Long user_id;
+    private Long userId;
 
     /**
      * 用户名
@@ -39,17 +39,17 @@ public class User implements Serializable {
     /**
      * 创建时间
      */
-    private Date createTime;
+    private Date created;
 
     /**
      * 更新时间
      */
-    private Date last_modified;
+    private Date lastModified;
 
     /**
      * 是否删除
      */
-    private Integer isDelete;
+    private Integer isdelete;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
