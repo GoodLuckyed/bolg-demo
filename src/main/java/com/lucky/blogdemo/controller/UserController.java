@@ -6,7 +6,9 @@ import com.lucky.blogdemo.common.ResultUtils;
 import com.lucky.blogdemo.exception.BusinessException;
 import com.lucky.blogdemo.model.user.UserLoginRequest;
 import com.lucky.blogdemo.model.user.UserRegisterRequest;
+import com.lucky.blogdemo.model.user.UserVo;
 import com.lucky.blogdemo.service.UserService;
+import com.lucky.blogdemo.utils.UserHolder;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
@@ -46,5 +48,15 @@ public class UserController {
         }
         String result = userService.login(userLoginRequest,request);
         return ResultUtils.success(result);
+    }
+
+    @Operation(summary = "获取当前用户信息")
+    @PostMapping("/me")
+    public BaseResponse<UserVo> getUserInfo(){
+        UserVo user = UserHolder.getUser();
+        if (user == null){
+            throw new BusinessException(ErrorCode.NOT_FOUND_ERROR);
+        }
+        return ResultUtils.success(user);
     }
 }
